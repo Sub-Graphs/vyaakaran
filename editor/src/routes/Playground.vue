@@ -14,7 +14,7 @@
           <Pane>
             <Editor />
           </Pane>
-          <Console />
+          <Tabs/>
         </Splitpanes>
         <CompileButton />
       </Pane>
@@ -48,8 +48,10 @@ import pkg from '../../package.json';
 import NewPlaygroundModal from '../components/NewPlaygroundModal.vue';
 import CompileButton from '../components/ui/CompileButton.vue';
 import Editor from '../components/Editor.vue';
-import Console from '../components/Console.vue';
 import EditorTabs from '../components/EditorTabs/EditorTabs.vue';
+import Tabs from '../components/Tabs.vue'
+
+
 import RegularGrammarPlayground from '../components/playgrounds/RegularGrammar.vue';
 import ContextFreeGrammarPlayground from '../components/playgrounds/ContextFreeGrammar.vue';
 import TuringMachinePlayground from '../components/playgrounds/TuringMachine.vue';
@@ -82,6 +84,10 @@ const views: Record<PlaygroundType, Record<string, { params?: string[], view: an
     },
   },
 };
+// const currentTab = ref('console');
+// const currentTabComponent = computed(() => {
+//   return currentTab.value === 'console' ? Console : Test;
+// });
 
 const playground = computed(getActivePlayground);
 const showNewPlaygroundModal = ref(false);
